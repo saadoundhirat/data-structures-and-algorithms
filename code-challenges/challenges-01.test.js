@@ -11,7 +11,7 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 const addOne = (arr) => {
   // Solution code here...
   const newArray = [];
-  arr.array.forEach(element => {
+  arr.forEach((element) => {
     newArray.push(element + 1);
   });
   return newArray;
@@ -27,6 +27,11 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
+  const newArray = [];
+  arr.forEach((element) => {
+    newArray.push(element+'!');
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,6 +44,12 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
+  const newArray = [];
+  arr.forEach((element) => {
+    let strToup = element.toUpperCase();
+    newArray.push(strToup);
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,17 +57,24 @@ CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
-Then, write a function named `speaker` that takes in an array of strings and a callback function. 
+Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
-Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
+Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
   // Solution code here...
+  let str = word.toUpperCase() + '!';
+  return str;
 };
 
 const speaker = (words, callback) => {
   // Solution code here...
+  const strArray =[];
+  words.forEach((element) => {
+    strArray.push(callback(element));
+  });
+  return strArray ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,17 +95,27 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  // for (let index = 0; index < times; index++) {
+  //   callback(arr , num);
+  // }
+  // return arr ;
+  do {
+    callback(arr,num);
+    times-=1;
+  } while(times !== 0);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store intentory (مخزن).
 
 The inventory is formatted like this:
 [
@@ -103,6 +131,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  const listArray =[];
+  availableItems.forEach((element) =>{
+    if(element.available === true){
+      listArray.push(element.name);
+    }
+  });
+  return listArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,6 +156,19 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  const resultArr= [];
+  arr.forEach((element)=>{
+    if (element%5 === 0 && element%3 ===0){
+      resultArr.push('Fizz Buzz');
+    } else if (element%5 === 0){
+      resultArr.push('Buzz');
+    } else if (element%3 === 0){
+      resultArr.push('Fizz');
+    }else {
+      resultArr.push(element);
+    }
+  });
+  return resultArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -174,7 +222,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
