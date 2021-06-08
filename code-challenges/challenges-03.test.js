@@ -128,6 +128,10 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  const newArray =arr.filter((item) =>{
+    if(item.baseStat > minBaseStat){return true;}
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,6 +144,14 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  const newArray =arr.filter((item) =>{
+    if(item.baseStat > minBaseStat){return true;}
+  });
+
+  const statArray=newArray.map((item)=>{
+    return item.stat.name;
+  });
+  return statArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -193,6 +205,26 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  // let clone = Object.assign({}, value);
+  // delete clone.unwantedKey;
+  // const newObjectArr = [];
+  // const newArray = arr.filter((item) =>{
+  //      const modifiedObject= item;
+  //      delete modifiedObject.children;
+  //      newObjectArr.push(modifiedObject);
+  //     return true;
+  //   });
+  // });
+  // return newObjectArr;
+
+  const newObjectArr = [];
+  const newArray = arr.filter((item) =>{
+    const modifiedObject= item;
+    delete modifiedObject.children;
+    newObjectArr.push(modifiedObject);
+    return true;
+  });
+  return newObjectArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -205,6 +237,17 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
+  const newArray = arr.filter((item) =>{
+    if (typeof item !== 'number'){
+      return false;
+    }else{return true;}
+  });
+  const oddOrEvenArr = newArray.map((item) =>{
+    if(item%2 === 0){
+      return 'even';
+    }else{return 'odd';}
+  });
+  return oddOrEvenArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -275,7 +318,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
@@ -286,7 +329,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
@@ -314,7 +357,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove non-integers and return "even" or "odd', () => {
     expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
     expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);
