@@ -8,7 +8,7 @@ note: we only have to use binary search to solve this challenge this means the l
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![White Board Image](https://1drv.ms/u/s!AnbCgxrO65MIog325inD3_jEXgXI)
+![White Board Image](https://1drv.ms/u/s!AnbCgxrO65MIog6VuxR_uTeMmSJi)
 ## mero link for the whiteboard
 
 [mero link for the whiteboard](https://miro.com/app/board/o9J_l5eBH7U=/)
