@@ -13,7 +13,8 @@ this value should be added to the middle of the array without using any build in
 
 [mero link for the whiteboard](https://miro.com/app/board/o9J_l5eBH7U=/)
 
-![White Board Image](https://1drv.ms/u/s!AnbCgxrO65MIogyiwGaeIh2lefxj)
+- NOTE
+<!-- the image is in the img folder  -->
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
