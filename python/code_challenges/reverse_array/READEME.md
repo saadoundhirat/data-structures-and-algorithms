@@ -10,7 +10,6 @@ making a function that will take an array as an arrgument then it will return th
 ## mero link for the whiteboard
 
 [mero link for the whiteboard](https://miro.com/app/board/o9J_l5eBH7U=/)
-<https://miro.com/app/board/o9J_l5eBH7U=/>
 
 ![White Board Image](https://1drv.ms/u/s!AnbCgxrO65MIoguBEM6odr-yas8G)
 
