@@ -111,10 +111,31 @@ class LinkedList:
         if not found_flag:
             raise Exception ("the key is not found")
 
+    def getKthNodeFromEnd(self, k):
+        if k < 0:
+            return "K is negative"
+        node_num = 0
+        current = self.head
+        while current: # count the nodes 
+            current = current.next
+            node_num = node_num + 1
+
+        if node_num >= k:
+            current = self.head # reset the current value to start the count from the beggining node
+            for i in range(node_num - k-1): #k-1 to remove null 
+                current = current.next
+        else:
+            return "Number of K is bigger than the number of Nodes !!!"      
+        return current
 
 if __name__ == "__main__":
     ll = LinkedList()
     ll.append(5)
-    ll.append(6)
-    ll.insert_before(6,4)
+    # ll.append(6)
+    # ll.append(7)
+    # ll.append(8)
+    # ll.append(9)
+    # ll.append(10)
+    x=ll.getKthNodeFromEnd(0)
     print(ll)
+    print(x)
