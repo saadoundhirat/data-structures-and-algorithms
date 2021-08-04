@@ -46,10 +46,12 @@ class LinkedList:
 
     def insert(self, value):
         """insert anode to the linked list with  Big O(1) so that means we have to add to the beginning of the list"""
-        node = Node(value)
-        node.next = self.head
-        self.head = node
-
+        node = Node(value) 
+        if not self.head: 
+             self.head = node 
+        else: 
+            node.next = self.head 
+            self.head = node
     ##SOLVING lAB 06
 
     # adds a new node with the given value to the end of the list
@@ -110,7 +112,7 @@ class LinkedList:
 
         if not found_flag:
             raise Exception ("the key is not found")
-
+    #code challenge 07
     def getKthNodeFromEnd(self, k):
         if k < 0:
             return "K is negative"
@@ -128,14 +130,114 @@ class LinkedList:
             return "Number of K is bigger than the number of Nodes !!!"      
         return current
 
+
+    # #code challenge 08
+    # def zip_list(self,list1 , list2):
+    #     """
+    #     zip two linked list together
+    #     """
+    #     # we have 6 cases in this code challenge:
+
+    #     #1- if one of the list is empty, then return the other list 
+    #     #2- if both list are not empty, then return the zipped list
+    #     #3- if both list is empty, then return None
+    #     #4- if the first list is longer
+    #     #5- if the second list is longer
+    #     #6- if the boht linked list same length
+
+    #     current1= list1.head
+    #     current2= list2.head 
+
+    #     if current1 == None:
+    #         return list2
+
+    #     if current2 == None:
+    #         return list1    
+
+    #     node_num_list1 = 0
+    #     node_num_list2 = 0
+
+    #     while current1:
+    #         node_num_list1 += 1
+    #         current1 = current1.next
+
+    #     while current2:
+    #         node_num_list2 += 1
+    #         current2 = current2.next
+
+    #     # if current2 is taller than current1 then revers the heads
+    #     if node_num_list1 < node_num_list2:
+    #         current2=list1.head
+    #         current1=list2.head
+    #     else:
+    #         current1= list1.head
+    #         current2= list2.head 
+    #     # start the loop 
+    #     while current1 != None or current2 != None:
+    #         temp1=current1.next
+    #         temp2=current2.next
+
+    #         current1.next = current2
+    #         current1= current1.next 
+
+    #         #to move to the next node which is temp1 we have to check that next is not None
+    #         if temp1 != None:
+    #             current1.next = temp1
+    #             current1=current1.next
+
+    #         current2=temp2
+
+    #         if current1.next == None and current2.next == None:
+    #             current1= current1.next
+
+    ##############################
+    ######code challenge 09#######
+    ##############################
+    # write afunction that takes alinked list then return the reverse of that linked list
+    def reverse_linked_list(self):
+        """write afunction thats takes alinked list then return the reverse of that linked list"""
+        
+        current = self.head
+        if current ==None:
+            return "list is empty"
+        newll = LinkedList()
+        while current: # count the nodes 
+            newll.insert(current.value)
+            current = current.next
+
+        return newll    
+
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
-    ll = LinkedList()
-    ll.append(5)
-    # ll.append(6)
-    # ll.append(7)
-    # ll.append(8)
-    # ll.append(9)
-    # ll.append(10)
-    x=ll.getKthNodeFromEnd(0)
-    print(ll)
+    list1= LinkedList()
+    list2= LinkedList()
+    list1.append(1)
+    list1.append(2)
+    list1.append(3)
+    list1.append(4)
+    list1.append(5)
+    print(list1)
+    x=list1.reverse_linked_list()
     print(x)
+    # list2.insert(6)
+    # list2.insert(7)
+    # list2.insert(8)
+    # list2.insert(9)
+    # list2.insert(10)
+    # list2.insert(11)
+    # list2.insert(12)
+
+    # ll3= LinkedList()
+    # xxx = ll3.zip_list(list1, list2)
+    # print()
