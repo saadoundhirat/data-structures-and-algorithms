@@ -1,3 +1,4 @@
+# LAB 05 (Singly Linked List)
 # Singly Linked List
 <!-- Short summary or background information -->
 - making asingly linked list with some methode (assert , include , return str)
@@ -16,3 +17,22 @@
 - insert => insert the value to the linked-list
 - include => to check if the value is already in the linkedList
 - some of the magic methods such as (__repr__ , __str__)
+
+# LAB 06 (linked-list-insertions)
+
+[Miro_link](https://miro.com/app/board/o9J_l3msfqo=/)
+
+# Challenge Summary
+<!-- Adding features to the Linked List (append , insert befor , insert after )-->
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+[Miro_link](https://miro.com/app/board/o9J_l3msfqo=/)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+-TDD => BigO(1) Spsce and BigO(n) Time  for all the functions , I Have choise this approch becase we cam make our test then start making the code functions also allows us to take advantage of single responspilty approch so we can test our functions.
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+- provided in the folder

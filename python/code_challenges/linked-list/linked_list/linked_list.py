@@ -1,11 +1,15 @@
-# This is the solution for code challenge 05
+# This is the solution for code challenge 05 && 06
 
-# node class for linked list
+
+
+
 class Node:
     def __init__(self, value=None):
         self.value = value
         self.next = None
 
+    def __repr__(self):
+        return str(self.value)
 class LinkedList:
     """
     Put docstring here
@@ -30,11 +34,6 @@ class LinkedList:
     def __repr__(self):
         return "Linkedlist"
 
-    def insert(self, value):
-        """insert anode to the linked list with  Big O(1) so that means we have to add to the beginning of the list"""
-        node = Node(value)
-        node.next = self.head
-        self.head = node
 
     def include(self, value):
         """Indicates whether that value exists as a Node’s value somewhere within the list."""
@@ -45,17 +44,77 @@ class LinkedList:
             node = node.next # move to next node
         return False
 
+    def insert(self, value):
+        """insert anode to the linked list with  Big O(1) so that means we have to add to the beginning of the list"""
+        node = Node(value)
+        node.next = self.head
+        self.head = node
 
-if __name__ == '__main__':
-    # node = Node("saadoun")
-    # print(node)
-    # linked_list = LinkedList()
-    # linked_list.head =node
-    # print(linked_list.head)
+    ##SOLVING lAB 06
 
-#  to test the __str__ to see if its print each node in the linked list
+    # adds a new node with the given value to the end of the list
+    def append(self, value):
+        """add a node to the end of the list"""
+        node = Node(value)
+        current = self.head
+        if current:
+            while current.next:
+                current = current.next
+            current.next = node
+            node.next = None
+        else:
+            self.head = node
+            node.next = None    
+
+    #adds a new node with the given new value immediately before the first node that has the value specified
+    def insert_before(self, targetValue, value):
+        """add new node before given node value immediately"""
+        found_flag=False
+        new_node=Node(value)
+        current=self.head
+        if current == None:
+           raise Exception('LL is empty')
+        else:
+            while current:
+                if current.next == None:
+                    if current.value==targetValue:
+                        found_flag=True
+                        new_node.next = current
+                        self.head = new_node
+                        break
+                if current.next.value==targetValue:
+                   found_flag=True
+                   new_node.next=current.next
+                   current.next=new_node
+                   break
+                else:
+                  current=current.next
+            if found_flag !=True:
+               print('Targeted value not found')
+    
+
+    #adds a new node with the given new value immediately after the first node that has the value specified
+    def insert_after(self, value, new_value):
+        if not self.head:
+            raise Exception("the ll is empty")
+        found_flag = False
+        new_node = Node(new_value)
+        current = self.head
+        while current:
+            if current.value == value:
+                new_node.next = current.next
+                current.next = new_node
+                found_flag=True
+                break
+            current = current.next
+
+        if not found_flag:
+            raise Exception ("the key is not found")
+
+
+if __name__ == "__main__":
     ll = LinkedList()
-    ll.insert(5)
-    ll.insert(4)
-    ll.insert(3)
-    print(ll) # should print: 3=>4=>5=>NULL
+    ll.append(5)
+    ll.append(6)
+    ll.insert_before(6,4)
+    print(ll)

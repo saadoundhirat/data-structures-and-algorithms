@@ -61,3 +61,53 @@ def test_return_collection():
     object.insert('1993')
 
     assert str(object) == '1993=>04=>24=>NULL'
+
+
+# 8- test the append value function in the linked list
+def test_append_value():
+    object = LinkedList()
+    object.append(6)
+    assert object.head.value == 6    
+
+#9- Can successfully add multiple nodes to the end of a linked list
+def test_append_multi_value():
+    object = LinkedList()
+    object.append(6)
+    object.append(7)
+    object.append(8)
+    assert str(object) == '6=>7=>8=>NULL'       
+
+#10- Can successfully insert a node before a node located i the middle of a linked list
+def test_insert_into_the_mid():
+    llobj=LinkedList()
+    llobj.append(24)
+    llobj.append(1993)
+    llobj.insert_before(1993,4)
+    assert str(llobj) == '24=>4=>1993=>NULL'
+
+
+#11- Can successfully insert a node before the first node of a linked list
+def test_insert_befor_first_node():
+    llobj=LinkedList()
+    llobj.append(24)
+    llobj.insert_before(24,4)
+    assert str(llobj) == '4=>24=>NULL'
+
+#12- Can successfully insert after a node in the middle of the linked list
+def test_insert_after_node_in_middle():
+    object = LinkedList()
+    object.append(6)
+    object.append(7)
+    object.append(9)
+    object.insert_after(7,8)
+    assert str(object) == '6=>7=>8=>9=>NULL'       
+
+
+#13- Can successfully insert a node after the last node of the linked list    
+def test_insert_after_last_node():
+    object = LinkedList()
+    object.append(6)
+    object.append(7)
+    object.append(8)
+    object.insert_after(8,9)
+    assert str(object) == '6=>7=>8=>9=>NULL'  
