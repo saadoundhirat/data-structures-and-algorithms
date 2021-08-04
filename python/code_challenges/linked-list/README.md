@@ -36,3 +36,27 @@
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 - provided in the folder
+
+
+
+# LAB 07 (test_kth_node_from_end)
+
+[Miro_link](https://miro.com/app/board/o9J_l3msfqo=/)
+
+# Challenge Summary
+<!-- 
+- making afunction inside class linked list name append and this functions takes avalue 
+- append that item to the end of the linkend list
+- loop to the end of the linked list using current.next thats allowes you to get the current as the last node and makes it faster )-->
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+[Miro_link](https://miro.com/app/board/o9J_l3msfqo=/)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+-TDD => BigO(1) Spsce and BigO(n) Time  for all the k-th , I Have choise this approch becase we cam make our test then start making the code functions also allows us to take advantage of single responspilty approch so we can test our functions.
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+- provided in the folder
