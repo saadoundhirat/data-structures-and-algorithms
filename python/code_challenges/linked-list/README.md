@@ -45,9 +45,9 @@
 
 # Challenge Summary
 <!-- 
-- making afunction inside class linked list name append and this functions takes avalue 
-- append that item to the end of the linkend list
-- loop to the end of the linked list using current.next thats allowes you to get the current as the last node and makes it faster )-->
+- making a function inside class linked list name append and this functions takes a value 
+- append that item to the end of the linked list
+- loop to the end of the linked list using current.next thats allowed you to get the current as the last node and makes it faster )-->
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
@@ -55,7 +55,7 @@
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
--TDD => BigO(1) Spsce and BigO(n) Time  for all the k-th , I Have choise this approch becase we cam make our test then start making the code functions also allows us to take advantage of single responspilty approch so we can test our functions.
+-TDD => BigO(1) Spsce and BigO(n) Time  for all the k-th , I Have choice this approch because we cam make our test then start making the code functions also allows us to take advantage of single responsibility approch so we can test our functions.
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
@@ -68,9 +68,7 @@
 
 # Challenge Summary
 <!-- 
-- making afunction inside class linked list name append and this functions takes avalue 
-- append that item to the end of the linkend list
-- loop to the end of the linked list using current.next thats allowes you to get the current as the last node and makes it faster )-->
+- making afunction inside class linked list called zip_list that take two lists as input then return the merged list)-->
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
@@ -78,7 +76,7 @@
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
--TDD => BigO(1) Spsce and BigO(n) Time  for all the k-th , I Have choise this approch becase we cam make our test then start making the code functions also allows us to take advantage of single responspilty approch so we can test our functions.
+-TDD => BigO(1) Space and BigO(n) Time  for all the k-th , I Have choice this approch because we can make our test then start making the code functions also allows us to take advantage of single responsibility approch so we can test our functions.
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
@@ -91,10 +89,10 @@
 
 # Challenge Summary
 <!-- 
--add afuncion that can take alinked kist then return that linked list reversed 
+-add a function that can take a linked kist then return that linked list reversed 
 
-- making afunction inside class linked list 
-- that fuction loop over the given linked list to reach the None and each time its insert current node to the new list
+- making a function inside class linked list 
+- that function loop over the given linked list to reach the None and each time its insert current node to the new list
 - make sure the linked list is not empty
 )-->
 
@@ -104,7 +102,7 @@
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
--TDD => BigO(n) Spsce and BigO(n) Time  for all the reverse function , I Have choise this approch becase we cam make our test then start making the code functions also allows us to take advantage of single responspilty approch so we can test our functions.
+-TDD => BigO(n) Space and BigO(n) Time  for all the reverse function , I Have choice this approch because we cam make our test then start making the code functions also allows us to take advantage of single responsibility approch so we can test our functions.
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
