@@ -1,3 +1,6 @@
+########################
+###code challenge 10####
+########################
 class Stack_empty(Exception):
     def __init__(self ,*args):
         if args:
