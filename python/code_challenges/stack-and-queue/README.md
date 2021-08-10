@@ -74,7 +74,40 @@
 </hr>
 
 # **```#code challenge 13#```**
- <!-- working on it -->
+
+# Challenge Summary
+
+- write a function to that takes a string and that includes brackets and return true if the brackets are balanced and false if they are not.
+- for example: if the string is "((5+3)*(9-7))" then the function should return true.
+- if the string is "(((3+1)+2)*3)" then the function should return false.
+- we have three types of brackets () {} []
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+<https://miro.com/app/board/o9J_l3fv6os=/>
+
+<!-- ![Miro Board](asserts/codechallenge12/code.png) -->
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- removing from the stack is O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+- go to the file and run the python module
+```python -m path/module_name```
+
+## Checklist
+
+- [ done ] Top-level README “Table of Contents” is updated
+- [ done ] README for this challenge is complete
+- [ done ] Summary, Description, Approach & Efficiency, Solution
+- [ done ] Picture of whiteboard
+- [ done ] Link to code
+- [ done ] Feature tasks for this challenge are completed
+- [ done ] Unit tests written and passing
+- [ done ] “Happy Path” - Expected outcome
+- [ done ] Expected failure
+- [ done ] Edge Case (if applicable/obvious)
 
 </hr>
 
