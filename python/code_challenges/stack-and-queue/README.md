@@ -31,7 +31,37 @@
 </hr>
 
 # **```#code challenge 11#```**
- <!-- working on it -->
+# Challenge Summary
+<!-- Description of the challenge -->
+- **the problem domain is:**
+- making pseudo queue using two stacks
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+<https://miro.com/app/board/o9J_l3fv6os=/>
+
+<!-- ![Miro Board](asserts/codechallenge12/code.png) -->
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- enqueue to the queue is O(1)
+- dequeue from the queue is O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+- go to the file and run the python module
+```python -m path/module_name```
+
+## Checklist
+
+- [ done ] Top-level README “Table of Contents” is updated
+- [ done ] README for this challenge is complete
+- [ done ] Summary, Description, Approach & Efficiency, Solution
+- [ done ] Picture of whiteboard
+- [ done ] Link to code
+- [ done ] Feature tasks for this challenge are completed
+- [ done ] Unit tests written and passing
+- [ done ] “Happy Path” - Expected outcome
+- [ done ] Expected failure
+- [ done ] Edge Case (if applicable/obvious)
 
 </hr>
 
