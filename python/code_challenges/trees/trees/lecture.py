@@ -171,47 +171,36 @@ class BinaryTree:
                 queue.enqueue(node.right)
 
 class BinarySearchTree(BinaryTree):
-    def __init__(self):
-        self.root = None
-
     
     def add(self, value):
-        node = Node(value)
-        if self.root == None:
-            self.root = node
-            return
-        current = self.root
-        while current:
-            if current.value > value: 
-                if current.right:
+        """Adds a value to the BST"""
+        if self.root is None:
+            self.root = TNode(value)
+        else:
+            current = self.root
+            while current:
+                if value < current.value:
+                    if current.left is None:
+                        current.left = TNode(value)
+                        return
+                    current = current.left
+                else:
+                    if current.right is None:
+                        current.right = TNode(value)
+                        return
                     current = current.right
-                else:
-                    current.right = node
-                    return
-            if current.value < value:
-                if current.left:
-                   current = current.left
-                else:
-                    current.left = node
-                    return
+
 
     def contains(self, value):
-        if value == self.root:
-            return True
+        """Returns True if value is in the BST, False otherwise"""
         current = self.root
         while current:
-            if current.value > value: 
-                if current.right:
-                   current = current.right
-                else:
-                    return False
-            if current.value < value:
-                if current.left:
-                   current = current.left 
-                else:
-                    return False
             if current.value == value:
-                return True  
+                return True
+            if current.value > value:
+                current = current.left
+            else:
+                current = current.right
         return False
 
 
@@ -227,17 +216,18 @@ if __name__ == "__main__":
     # tree.post_order()
 
     tree = BinarySearchTree()
-    tree.add(5)
-    tree.add(15)
-    tree.add(3)
-    tree.add(7)
-    tree.add(12)
     tree.add(20)
-    tree.add(18)
-    tree.contains(tree.root, 20)
-
-
-# class KNode:
-#     def __init__(self, value=None):
-#         self.value = value
-#         self.children = []
+    tree.add(15)
+    tree.add(10)
+    tree.add(16)
+    tree.add(30)
+    tree.add(25)
+    tree.add(35)
+    print("pre_order")
+    tree.pre_order()
+    print("in_order")
+    tree.in_order()
+    print("post_order")
+    tree.post_order()
+    print("If tree contains value= 20 =>" ,tree.contains(20))
+    print("If tree contains value= 45 =>",tree.contains(45))
