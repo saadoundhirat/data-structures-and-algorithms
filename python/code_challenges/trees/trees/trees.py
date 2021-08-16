@@ -180,6 +180,22 @@ class BinaryTree:
             if node.right is not None:
                 queue.enqueue(node.right)
 
+    def tree_max(self):
+        """find max value in tree"""
+        if self.root is None:
+            return None
+        max = self.root.value
+        def find_max(root):
+            nonlocal max
+            if root.value > max:
+                max = root.value
+            if root.left is not None:
+                find_max(root.left)
+            if root.right is not None:
+                find_max(root.right)
+        find_max(self.root)
+        return max
+
 class BinarySearchTree(BinaryTree):
     
     def add(self, value):
@@ -215,14 +231,14 @@ class BinarySearchTree(BinaryTree):
 
 
 if __name__ == "__main__":
-    tree = BinaryTree()
-    tree.root = TNode("a")
-    tree.root.left = TNode("b")
-    tree.root.right = TNode("c")
-    tree.root.right.left = TNode("d")
-    print(tree.pre_order())
-    print(tree.in_order())
-    print(tree.post_order())
+    # tree = BinaryTree()
+    # tree.root = TNode("a")
+    # tree.root.left = TNode("b")
+    # tree.root.right = TNode("c")
+    # tree.root.right.left = TNode("d")
+    # print(tree.pre_order())
+    # print(tree.in_order())
+    # print(tree.post_order())
     # tree.pre_order_iterative()
 
     # tree = BinarySearchTree()
@@ -241,3 +257,15 @@ if __name__ == "__main__":
     # tree.post_order()
     # print("If tree contains value= 20 =>" ,tree.contains(20))
     # print("If tree contains value= 45 =>",tree.contains(45))
+
+#######lab 16 max value in binary tree#########
+    tree = BinaryTree()
+    tree.root = TNode(10)
+    tree.root.left = TNode(15)
+    tree.root.right = TNode(20)
+    tree.root.left.left = TNode(8)
+    tree.root.left.right = TNode(9)
+    tree.root.right.left = TNode(17)
+    tree.root.right.right = TNode(25)
+    print("max value in tree is:",tree.tree_max())
+
