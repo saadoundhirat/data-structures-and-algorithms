@@ -40,7 +40,7 @@
 - [x] Expected failure
 - [x] Edge Case (if applicable/obvious)
 
-# **Lab & code challenge 15 Trees**
+# **Lab & code challenge 16 Trees**
 
 ## miroLink
 <https://miro.com/app/board/o9J_l2W9-yA=/>
@@ -64,6 +64,45 @@
 <!-- Description of each method publicly available in each of your trees -->
 - max_value time complexity: O(n) cuz we max_value with binary tree and we have to visit all tree nodes
 - max_value space complexity: O(1) cuz we are doing a binary tree and returning only the value
+
+## Check List
+
+- [x] Top-level README “Table of Contents” is updated
+- [x] README for this challenge is complete
+- [x] Summary, Description, Approach & Efficiency, Solution
+- [x] Picture of whiteboard
+- [x] Link to code
+- [x] Feature tasks for this challenge are completed
+- [x] Unit tests written and passing
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure
+- [x] Edge Case (if applicable/obvious)
+
+
+# **Lab & code challenge 17 Trees**
+
+## miroLink
+<https://miro.com/app/board/o9J_l2W9-yA=/>
+
+## Trees
+<!-- Short summary or background information -->
+- A tree is a nonlinear data structure, compared to arrays, linked lists, stacks and queues which are linear data structures. A tree can be empty with no nodes or a tree is a structure consisting of one node called the root and zero or one or more subtrees.
+
+## Challenge
+<!-- Description of the challenge -->
+
+- Traverse tree using breadth-first traversal approach. 
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- breadth-first traversal
+  - Arguments: tree
+  - Return: list includes the tree value 
+  
+## API
+<!-- Description of each method publicly available in each of your trees -->
+- breadth-first traversal time complexity: O(n) cuz we max_value with binary tree and we have to visit all tree nodes
+- breadth-first traversal space complexity: O(n) cuz we are doing a binary tree and returning list that has all the tree nodes
 
 ## Check List
 
