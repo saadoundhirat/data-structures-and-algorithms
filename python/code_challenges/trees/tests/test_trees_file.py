@@ -76,3 +76,21 @@ def test_postorder_traversal():
     tree.root.right.left = TNode(6)
     tree.root.right.right = TNode(7)
     assert tree.post_order() == [4,5,2,6,7,3,1]
+
+
+## Can return the max_value inside the tree 
+def test_max_value():
+    tree = BinaryTree()
+    tree.root = TNode(10)
+    tree.root.left = TNode(15)
+    tree.root.right = TNode(20)
+    tree.root.left.left = TNode(8)
+    tree.root.left.right = TNode(9)
+    tree.root.right.left = TNode(17)
+    tree.root.right.right = TNode(25)
+    assert tree.tree_max() == 25
+
+## Can return None if the tree is empty
+def test_max_value_empty_tree():
+    tree = BinaryTree()
+    assert tree.tree_max() == None
