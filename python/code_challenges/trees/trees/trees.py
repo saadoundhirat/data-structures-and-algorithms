@@ -83,6 +83,7 @@ class Queue:
             return output
 
     def isEmpty(self):
+        """return true if the queue is empty and false if it is not empty"""
         return self.front == None
     
     def peek(self):
@@ -168,18 +169,6 @@ class BinaryTree:
             if node.value.left:
                 stack.push(node.value.left)  
                 
-    def breadth_First(self):
-        """traverse tree breadth first"""
-        queue = Queue()
-        queue.enqueue(self.root)
-        while not queue.isEmpty():
-            node = queue.dequeue()
-            print(node.value)
-            if node.left is not None:
-                queue.enqueue(node.left)
-            if node.right is not None:
-                queue.enqueue(node.right)
-
     def tree_max(self):
         """find max value in tree"""
         if self.root is None:
@@ -196,6 +185,25 @@ class BinaryTree:
         find_max(self.root)
         return max
 
+    def breadth_first(self):
+        """traverse tree using breadth first"""
+        output = []
+        count = 0
+        if self.root is None:
+            return output
+        queue = Queue()
+        queue.enqueue(self.root)
+        while not queue.isEmpty():
+            count += 1
+            node = queue.dequeue()
+            print("node value" ,node.value)
+            output.append(node.value.value)
+            if node.value.left is not None:
+                queue.enqueue(node.value.left)
+            if node.value.right is not None:
+                queue.enqueue(node.value.right)
+        print("count", count)
+        return output
 class BinarySearchTree(BinaryTree):
     
     def add(self, value):
@@ -259,13 +267,23 @@ if __name__ == "__main__":
     # print("If tree contains value= 45 =>",tree.contains(45))
 
 #######lab 16 max value in binary tree#########
-    tree = BinaryTree()
-    tree.root = TNode(10)
-    tree.root.left = TNode(15)
-    tree.root.right = TNode(20)
-    tree.root.left.left = TNode(8)
-    tree.root.left.right = TNode(9)
-    tree.root.right.left = TNode(17)
-    tree.root.right.right = TNode(25)
-    print("max value in tree is:",tree.tree_max())
+    # tree = BinaryTree()
+    # tree.root = TNode(10)
+    # tree.root.left = TNode(15)
+    # tree.root.right = TNode(20)
+    # tree.root.left.left = TNode(8)
+    # tree.root.left.right = TNode(9)
+    # tree.root.right.left = TNode(17)
+    # tree.root.right.right = TNode(25)
+    # print("max value in tree is:",tree.tree_max())
 
+#######lab 17 breath first binary tree#########
+    tree = BinaryTree()
+    tree.root = TNode("a")
+    tree.root.left = TNode("b")
+    tree.root.right = TNode("c")
+    tree.root.left.left = TNode("d")
+    tree.root.left.right = TNode("e")
+    tree.root.right.left = TNode("f")
+    tree.root.right.right = TNode("g")
+    print(tree.breadth_first())

@@ -94,3 +94,16 @@ def test_max_value():
 def test_max_value_empty_tree():
     tree = BinaryTree()
     assert tree.tree_max() == None
+
+## Test the breadth-first traversal of binary trees
+def test_depth_first_tree():
+    """breadth first return list with the values of the tree node"""
+    tree = BinaryTree()
+    tree.root = TNode("a")
+    tree.root.left = TNode("b")
+    tree.root.right = TNode("c")
+    tree.root.left.left = TNode("d")
+    tree.root.left.right = TNode("e")
+    tree.root.right.left = TNode("f")
+    tree.root.right.right = TNode("g")
+    assert tree.breadth_first() == ["a","b","c","d","e","f","g"]
