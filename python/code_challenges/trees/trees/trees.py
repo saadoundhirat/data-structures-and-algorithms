@@ -80,6 +80,8 @@ class Queue:
         else:
             output = self.front
             self.front = self.front.next
+            if self.front == None:
+                self.rear = None
             return output
 
     def isEmpty(self):
@@ -185,6 +187,26 @@ class BinaryTree:
         find_max(self.root)
         return max
 
+    # def breadth_first(self):
+    #     """traverse tree using breadth first"""
+    #     output = []
+    #     count = 0
+    #     if self.root is None:
+    #         return output
+    #     queue = []
+    #     queue.append(self.root)
+    #     while len(queue) > 0:
+    #         count += 1
+    #         node = queue.pop(0)
+    #         output.append(node.value)
+    #         if node.left is not None:
+    #             print("llllllllll")
+    #             queue.append(node.left)
+    #         if node.right is not None:
+    #             queue.append(node.right)
+    #     print("count", count)
+    #     return output
+
     def breadth_first(self):
         """traverse tree using breadth first"""
         output = []
@@ -195,15 +217,16 @@ class BinaryTree:
         queue.enqueue(self.root)
         while not queue.isEmpty():
             count += 1
-            node = queue.dequeue()
-            print("node value" ,node.value)
-            output.append(node.value.value)
-            if node.value.left is not None:
-                queue.enqueue(node.value.left)
-            if node.value.right is not None:
-                queue.enqueue(node.value.right)
+            node = queue.dequeue().value
+            output.append(node.value)
+            if node.left is not None:
+                print("llllllllll")
+                queue.enqueue(node.left)
+            if node.right is not None:
+                queue.enqueue(node.right)
         print("count", count)
         return output
+        
 class BinarySearchTree(BinaryTree):
     
     def add(self, value):
