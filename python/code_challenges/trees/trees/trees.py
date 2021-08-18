@@ -111,10 +111,7 @@ class BinaryTree:
         """"traverse tree recursively"""
         output = []
         def traverse(root):
-            # print the root node
-            # print(root.value)
             output.append(root.value)
-            # traverse left & right subtree
             if root.left is not None:
                 traverse(root.left)
             if root.right is not None:
