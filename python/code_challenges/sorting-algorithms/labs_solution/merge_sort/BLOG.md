@@ -5,39 +5,39 @@
 pseudo code for insertion sort:
     ```
     
-ALGORITHM Mergesort(arr)
-    DECLARE n <-- arr.length
+    ALGORITHM Mergesort(arr)
+        DECLARE n <-- arr.length
 
-    if n > 1
-      DECLARE mid <-- n/2
-      DECLARE left <-- arr[0...mid]
-      DECLARE right <-- arr[mid...n]
-       # sort the left side
-      Mergesort(left)
-       # sort the right side
-      Mergesort(right)
-       # merge the sorted left and right sides together
-      Merge(left, right, arr)
+        if n > 1
+        DECLARE mid <-- n/2
+        DECLARE left <-- arr[0...mid]
+        DECLARE right <-- arr[mid...n]
+        # sort the left side
+        Mergesort(left)
+        # sort the right side
+        Mergesort(right)
+        # merge the sorted left and right sides together
+        Merge(left, right, arr)
 
-ALGORITHM Merge(left, right, arr)
-    DECLARE i <-- 0
-    DECLARE j <-- 0
-    DECLARE k <-- 0
+    ALGORITHM Merge(left, right, arr)
+        DECLARE i <-- 0
+        DECLARE j <-- 0
+        DECLARE k <-- 0
 
-    while i < left.length && j < right.length
-        if left[i] <= right[j]
-            arr[k] <-- left[i]
-            i <-- i + 1
+        while i < left.length && j < right.length
+            if left[i] <= right[j]
+                arr[k] <-- left[i]
+                i <-- i + 1
+            else
+                arr[k] <-- right[j]
+                j <-- j + 1
+
+            k <-- k + 1
+
+        if i = left.length
+        set remaining entries in arr to remaining values in right
         else
-            arr[k] <-- right[j]
-            j <-- j + 1
-
-        k <-- k + 1
-
-    if i = left.length
-       set remaining entries in arr to remaining values in right
-    else
-       set remaining entries in arr to remaining values in left
+        set remaining entries in arr to remaining values in left
     ```
 
 python code for insertion sort:
@@ -77,7 +77,10 @@ def merge_sort(array):
 
 - image: to see the image go to static/lab27/merge_Sort
 
-![White Board Image](mergeSOrt.png)
+![White Board Image](Merge-Sort-Tutorial.png)
+
+
+![White Board Image](visual_merge.png)
 
 ## Miro link
 

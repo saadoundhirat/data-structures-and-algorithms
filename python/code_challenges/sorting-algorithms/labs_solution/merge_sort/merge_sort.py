@@ -3,7 +3,6 @@
 ############################
 
 """
-
 ALGORITHM Mergesort(arr)
     DECLARE n <-- arr.length
 
