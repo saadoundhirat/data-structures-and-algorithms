@@ -2,6 +2,7 @@
 #####code challenge 26######
 ############################
 
+# pseudo code 
 """
   InsertionSort(int[] arr)
 
