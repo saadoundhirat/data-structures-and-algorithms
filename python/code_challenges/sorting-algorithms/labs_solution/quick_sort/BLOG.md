@@ -89,6 +89,7 @@ the function takes a list and start of the lest and the end of the list and retu
 <!-- Embedded whiteboard image -->
 
 ![White Board Image](quick_sort.jpg)
+![White Board Image](trasingquicksort.png)
 
 ## Miro link
 
