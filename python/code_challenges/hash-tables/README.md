@@ -47,30 +47,5 @@ output: "I"
 <!-- Description of each method publicly available in each of your hashtable -->
 - hashmap-repeated-word (string): returns the first word to occur more than once in a string.
 
-## Miro
-
-[White Board Image](https://miro.com/app/board/o9J_lyoZoEU=/)
-
-
-# code challenge32: hashmap-tree-intersection
-<!-- Short summary or background information -->
-Write a function called tree-intersection that takes two linked list and push the intersection between the trees to list and return the list
-
-input: two binary trees
-output: list
-
-## Challenge
-<!-- Description of the challenge -->
-Write a function called tree-intersection that takes two linked list and push the intersection between the trees to list and return the list
-
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-- Test driven development (TDD)
-
-## API
-<!-- Description of each method publicly available in each of your hashtable -->
-- hashmap-tree-intersection(tree1, tree2): returns two binary trees.
-
-## Miro
-
+## Miro:
 [White Board Image](https://miro.com/app/board/o9J_lyoZoEU=/)
