@@ -12,26 +12,7 @@ class TNode:
 class BinaryTree:
     def __init__(self):
         self.root = None
-        self.table = HashTable()
-
-    def tree_intersection(self ,tree1, tree2):
-        """
-        Given two binary search trees, return a list containing all the values from
-        both trees that are the same.    
-        >>> tree1 = create_tree([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-        >>> tree2 = create_tree([2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
-        >>> tree_intersection(tree1, tree2)
-        [2, 3, 4, 5, 6, 7, 8, 9, 10]
-        """
-        listtree1 = tree1.pre_order() 
-        listtree2 = tree2.pre_order()
-        intersection = []
-        for i in listtree1:
-            for j in listtree2:
-                if i == j:
-                    intersection.append(i)
-        return intersection
-
+        
     def pre_order(self):
             """"traverse tree recursively"""
             intersection = []
@@ -47,6 +28,26 @@ class BinaryTree:
                     traverse(root.right)
             traverse(self.root)
             return intersection
+
+    def tree_intersection(self ,tree1, tree2 ,hashtable):
+        """
+        Given two binary search trees, return a list containing all the values from
+        both trees that are the same.    
+        """
+        listtree1 = tree1.pre_order() 
+        for item in listtree1:
+            hashtable.addItem(str(item), item)
+
+        intersection = []
+        listtree2 = tree2.pre_order()
+        for element in listtree2:
+            if hashtable.containsItem(str(element)):
+                intersection.append(element)
+            else:
+                hashtable.addItem(str(element), element)
+        
+        return intersection
+
 
 if __name__ == "__main__":
     tree1= BinaryTree()
@@ -76,7 +77,7 @@ if __name__ == "__main__":
     tree2.root.right.right.left = TNode(4)
     tree2.root.right.right.right = TNode(500)
 
-
+    hashtable = HashTable()
     tree = BinaryTree()
-    intersectionList = tree.tree_intersection(tree1, tree2)
+    intersectionList = tree.tree_intersection(tree1, tree2 , hashtable)
     print(intersectionList)
