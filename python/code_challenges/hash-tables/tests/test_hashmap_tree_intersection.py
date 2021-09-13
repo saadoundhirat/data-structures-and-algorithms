@@ -30,7 +30,7 @@ def test_hashmap_tree_intersection():
     tree2.root.right.right.left = TNode(4)
     tree2.root.right.right.right = TNode(500)
 
-
+    hashtable = HashTable()
     tree = BinaryTree()
-    intersectionList = tree.tree_intersection(tree1, tree2)
+    intersectionList = tree.tree_intersection(tree1, tree2 , hashtable)
     assert intersectionList == [100, 160, 125, 175, 200, 350, 500]

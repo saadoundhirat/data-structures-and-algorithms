@@ -56,6 +56,13 @@ class HashTable:
             if element[0] == key:
                 del self.arr[h][idx]
     
+    def keys(self):
+        """function that return all keys in the hash table"""
+        keys = []
+        for element in self.arr:
+            for key in element:
+                keys.append(key[0])
+        return keys
 
 def repeated_word(str):
     if str == "":
