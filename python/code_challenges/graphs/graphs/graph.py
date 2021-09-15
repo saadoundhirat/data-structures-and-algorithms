@@ -43,7 +43,7 @@ class Vertex(): # node
         self.value = value 
 
 class Edge():
-    def __init__(self, vertex, weight):
+    def __init__(self, vertex, weight=0):
         self.vertex = vertex
         self.weight  = weight
 
@@ -79,7 +79,7 @@ class Graph:
         """Get all of the neighbors of a vertex"""
         return self._adjacency_list.get(vertex, [])
 
-    def breadth_first_search(self, start_vertex, action=(lambda x: None)):
+    def breadth_first_search_action(self, start_vertex, action=(lambda x: None)):
         queue = Queue()
         visited = set() # set is a collection of unique elements so we can use it to check if a node has been visited already
 
@@ -99,11 +99,46 @@ class Graph:
                 else:
                     visited.add(neighbor_vertex)
                 queue.enqueue(neighbor_vertex)
+    
+    def breadth_search(self, root):
+        if root is None:
+            return []
+        neighbors_list = self.get_neighbors(root)
+        if len(neighbors_list) == 0:
+            return []
+        queue = Queue()
+        visited = set() #unique values 
+        result_list = []
+        
+        queue.enqueue(root)
+        visited.add(root)
+
+        while len(queue):
+            current_vertex = queue.dequeue()
+            result_list.append(current_vertex.value)
+            for edge in self._adjacency_list[current_vertex]:
+                neighbor_vertex = edge.vertex
+                if neighbor_vertex not in visited:
+                    visited.add(neighbor_vertex)
+                    queue.enqueue(neighbor_vertex)
+        return result_list
+
+
+
 
 if __name__ == "__main__":
-    g = Graph()
-    node1 = g.add_node('node1')
-    node2 = g.add_node('node2')
-    g.add_edge(node1, node2)
+    graph = Graph()
+    node1 = graph.add_node('Pandora')
+    node2 = graph.add_node('Aredelle')
+    node3 = graph.add_node('Metroville')
+    node4 = graph.add_node('Monstarpolis')
+    node5 = graph.add_node('Narina')
+    node6 = graph.add_node('Naboo')
 
-    g.breadth_first_search(node1, lambda v: print(v.value))
+    graph.add_edge(node1, node2)
+    graph.add_edge(node2, node3)
+    graph.add_edge(node2, node4)
+    graph.add_edge(node3, node5)
+    graph.add_edge(node3, node6)
+    graph.add_edge(node4, node6)
+    print(graph.breadth_search(node1))

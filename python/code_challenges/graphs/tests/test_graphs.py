@@ -103,3 +103,22 @@ def test_get_neighbors():
     assert neighbor_edge.vertex.value == 'banana'
 
     assert neighbor_edge.weight == 44
+
+# test code challenge 36
+def test_breadth_search():
+    graph = Graph()
+    node1 = graph.add_node('Pandora')
+    node2 = graph.add_node('Aredelle')
+    node3 = graph.add_node('Metroville')
+    node4 = graph.add_node('Monstarpolis')
+    node5 = graph.add_node('Narina')
+    node6 = graph.add_node('Naboo')
+
+    graph.add_edge(node1, node2)
+    graph.add_edge(node2, node3)
+    graph.add_edge(node2, node4)
+    graph.add_edge(node3, node5)
+    graph.add_edge(node3, node6)
+    graph.add_edge(node4, node6)
+
+    assert graph.breadth_search(node1) == ['Pandora', 'Aredelle', 'Metroville', 'Monstarpolis', 'Narina', 'Naboo']
