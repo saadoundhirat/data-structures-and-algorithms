@@ -1,6 +1,10 @@
+
+from graphs import __version__
+=======
 import pytest
 from graphs import __version__
 from graphs.graph import Graph, Vertex
+
 
 
 
