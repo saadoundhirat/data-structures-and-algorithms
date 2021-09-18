@@ -75,10 +75,10 @@ Using a dictionary to store the nodes and edges.
 
 ## Approach & Efficiency
 
-  ![business-trip-itinerary]()
+  [business-trip-itinerary](https://docs.google.com/document/d/1ESGlIVd77msKK1UC3aoXeuv8Kmag8fEa5AJOWK_2g18/edit?usp=sharing)
 
 - Big O:
-  - Time: O(n)
+  - Time: O(n^2)
   - Space: O(1)
 
 ## Tasks
