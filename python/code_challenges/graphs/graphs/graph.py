@@ -71,6 +71,14 @@ class Graph:
 
         self._adjacency_list[start_vertex].append(Edge(end_vertex, weight))
 
+    def print_adjacency_list(self):
+        list = self._adjacency_list.keys()
+        for key in list:
+            edges = ""
+            for childe in self._adjacency_list[key]:
+                edges += childe.vertex.value + " => "
+            print(key.value, ":",f"{edges}" )
+
     def get_nodes(self):
         """Get all of the nodes in the graph"""
         return self._adjacency_list.keys()
@@ -123,22 +131,70 @@ class Graph:
                     queue.enqueue(neighbor_vertex)
         return result_list
 
+    def business_trip(self,cities:list):
+
+        if len(cities) == 0:
+            return False,'$0' 
+
+        if self._adjacency_list[cities[0]] == []:
+            return False,'$0' 
+        sum = 0
+        path_found_flag = False
+        for i in range(len(cities)-1):
+            neighbors = self._adjacency_list[cities[i]]
+            for neighbor in neighbors:
+                if cities[i+1].value == neighbor.vertex.value:
+                    sum += neighbor.weight
+                    path_found_flag = True
+                    break
+                else:
+                    sum += 0
+                    path_found_flag = False
+        if not path_found_flag:
+            return False,'$0'     
+        return True,'$'+ str(sum)
 
 
 
 if __name__ == "__main__":
-    graph = Graph()
-    node1 = graph.add_node('Pandora')
-    node2 = graph.add_node('Aredelle')
-    node3 = graph.add_node('Metroville')
-    node4 = graph.add_node('Monstarpolis')
-    node5 = graph.add_node('Narina')
-    node6 = graph.add_node('Naboo')
+    # graph = Graph()
+    # node1 = graph.add_node('Pandora')
+    # node2 = graph.add_node('Aredelle')
+    # node3 = graph.add_node('Metroville')
+    # node4 = graph.add_node('Monstarpolis')
+    # node5 = graph.add_node('Narina')
+    # node6 = graph.add_node('Naboo')
 
-    graph.add_edge(node1, node2)
-    graph.add_edge(node2, node3)
-    graph.add_edge(node2, node4)
-    graph.add_edge(node3, node5)
-    graph.add_edge(node3, node6)
-    graph.add_edge(node4, node6)
-    print(graph.breadth_search(node1))
+    # graph.add_edge(node1, node2)
+    # graph.add_edge(node2, node3)
+    # graph.add_edge(node2, node4)
+    # graph.add_edge(node3, node5)
+    # graph.add_edge(node3, node6)
+    # graph.add_edge(node4, node6)
+    # print(graph.breadth_search(node1))
+    graph = Graph()
+    v1 = graph.add_node('Pandora')
+    v2 = graph.add_node('Arendelle')
+    v3 = graph.add_node('Metroville')
+    v4 = graph.add_node('Monstropolis')
+    v5 = graph.add_node('Narnia')
+    v6 = graph.add_node('Naboo')
+    graph.add_edge(v1,v2,150)
+    graph.add_edge(v1,v3,82)
+    graph.add_edge(v2,v3,99)
+    graph.add_edge(v2,v4,42)
+    graph.add_edge(v3,v4,105)
+    graph.add_edge(v3,v5,37)
+    graph.add_edge(v3,v6,26)
+    graph.add_edge(v4,v6,73)
+    graph.add_edge(v5,v6,250)
+
+    print(graph.print_adjacency_list())
+    cities = [v1,v2,v3]
+    print(graph.business_trip(cities))
+    cities2 = [v1,v2]
+    print(graph.business_trip(cities2))
+    cities3 = [v6,v1]
+    print(graph.business_trip(cities3))
+    cities4 = [v6]
+    print(graph.business_trip(cities4))
