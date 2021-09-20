@@ -92,3 +92,21 @@ Using a dictionary to store the nodes and edges.
 - [x] Link to code.
 
 ---
+#######################################
+# Code Challenge 38
+
+## Challenge Summary
+
+Write the following method for the Graph class:
+depth first
+Arguments: Node (Starting point of search)
+Return: A collection of nodes in their pre-order depth-first traversal order
+
+## Whiteboard Process
+
+[Whiteboard](https://docs.google.com/document/d/12cHmh9-mFU-28PnBFakzU_oUuxpclt23HMeo_o3uoJA/edit?usp=sharing)
+
+## Approach & Efficiency
+
+time : O(nlogn)
+space : O(n)
